@@ -1,12 +1,14 @@
-boom_chance = float(input(("Estimated chance of booming economy")))
-norm_chance = float(input(("Estimated chance of normal economy")))
-bear_chance = float(input((("Estimated chance of recession"))))
+class Investments:
+    def __init__(self,probability_bull,probability_norm,probability_bear,earnings_bull,earnings_norm,earnings_bear):
+        self.prob_bull = probability_bull
+        self.prob_norm = probability_norm
+        self.prob_bear = probability_bear
+        self.earn_bull = earnings_bull
+        self.earn_norm = earnings_norm
+        self.earn_bear = earnings_bear
 
-boom_earning= float(input(("Estimated return in booming economy")))
-norm_earning= float(input(("Estimated return in normal economy")))
-bear_earning= float(input(("Estimated return in recession")))
+    def expectations(self):
+        print((self.prob_bull*self.earn_bull)+(self.prob_norm * self.earn_norm)+(self.prob_bear*self.earn_bear))
 
-def earnings():
-    return (boom_chance*boom_earning)+(norm_chance*norm_earning)+(bear_chance*bear_earning)
-
-print(earnings())
+portfolio = Investments(float(input("enter probability of a bull market")),float(input("Enter the probability of a normal market ")),float(input("enter the probability of a bear market")),float(input("enter the return on a bull market ")),float(input("Enter the return of a normal market ")),float(input("enter the return of a bear market")))
+portfolio.expectations()
