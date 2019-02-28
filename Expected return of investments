@@ -1,0 +1,12 @@
+boom_chance = float(input(("Estimated chance of booming economy")))
+norm_chance = float(input(("Estimated chance of normal economy")))
+bear_chance = float(input((("Estimated chance of recession"))))
+
+boom_earning= float(input(("Estimated return in booming economy")))
+norm_earning= float(input(("Estimated return in normal economy")))
+bear_earning= float(input(("Estimated return in recession")))
+
+def earnings():
+    return (boom_chance*boom_earning)+(norm_chance*norm_earning)+(bear_chance*bear_earning)
+
+print(earnings())
